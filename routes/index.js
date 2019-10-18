@@ -67,44 +67,6 @@ router.post('/admin/login', function(req, res, next) {
     );
 });
 
-// // 上传头像图片
-// router.post('/admin/upload/avatar', upload.single('avatar'), function(
-//     req,
-//     res,
-//     next
-// ) {
-//     if (req.file) {
-//         let imgUrl = imgPath(req, req.file.rdestination);
-//         connection.query(
-//             `update userInfo set avatar='${imgUrl}' where id = 1`,
-//             (e, r, f) => {
-//                 if (e) throw error;
-//                 // console.log(req.file);
-//             }
-//         );
-//         res.send(imgUrl);
-//     } else {
-//         res.end('upload error');
-//     }
-// });
-
-// // 上传背景图片
-// router.post('/admin/upload/bg', upload.single('bg'), function(req, res, next) {
-//     if (req.file) {
-//         let imgUrl = imgPath(req, req.file.rdestination);
-//         connection.query(
-//             `update userInfo set bgImg='${imgUrl}' where id = 1`,
-//             (e, r, f) => {
-//                 if (e) throw error;
-//                 // console.log(req.file);
-//             }
-//         );
-//         res.send(imgUrl);
-//     } else {
-//         res.end('upload error');
-//     }
-// });
-
 // 上传图片
 router.post('/admin/uploadImg', upload.single('img'), function(req, res, next) {
     console.log('req.body.form :', req.body.form);
